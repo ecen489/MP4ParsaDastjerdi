@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
@@ -24,11 +24,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View view){
-        String value = editText.getText().toString();
-        textView.setText(value);
-    }
+
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            String value = editText.getText().toString();
+            textView.setText(value);
+        }
+    });
 
 
 }
